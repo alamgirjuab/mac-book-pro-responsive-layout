@@ -29,56 +29,57 @@
                     Magic Keyboard - US English</p>
                 <div class="my-5">
                     <h6>Memory</h6>
-                    <button class="btn btn-outline-dark">8GB unified memory</button>
-                    <button class="btn btn-outline-dark">16GB unified memory</button>
+                    <button id="8gb-memory" class="btn btn-outline-dark">8GB unified memory</button>
+                    <button id="16gb-memory" class="btn btn-outline-dark">16GB unified memory</button>
                 </div>
                 <div>
                     <h6>Storage</h6>
-                    <button class="btn btn-outline-dark">256GB SSD storage</button>
-                    <button class="btn btn-outline-dark">512GB SSD storage</button>
-                    <button class="btn btn-outline-dark">1TB SSD storage</button>
+                    <button id="256gb-storage" class="btn btn-outline-dark">256GB SSD storage</button>
+                    <button id="512gb-storage" class="btn btn-outline-dark">512GB SSD storage</button>
+                    <button id="1tb-storage" class="btn btn-outline-dark">1TB SSD storage</button>
                 </div>
                 <div class="my-5">
                     <h6>Choose your delivery option</h6>
-                    <button class="btn btn-outline-dark">Friday, Aug 25 FREE Prime Delivery</button>
-                    <button class="btn btn-outline-dark">Friday, Aug 21 Delivery Charge $20</button>
+                    <button id="free-delivery" class="btn btn-outline-dark">Friday, Aug 25 FREE Prime Delivery</button>
+                    <button id="premium-delivery" class="btn btn-outline-dark">Friday, Aug 21 Delivery Charge
+                        $20</button>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 border-bottom d-flex justify-content-between p-2">
                         <h6>Best Price</h6>
-                        <h6>$<span>1299</span></h6>
+                        <h6>$<span id="normal-price">1299</span></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 border-bottom d-flex justify-content-between p-2">
                         <h6>Extra Memory Cost</h6>
-                        <h6>$<span>0</span></h6>
+                        <h6>$<span id="extra-memory-price">0</span></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 border-bottom d-flex justify-content-between p-2">
                         <h6>Extra Storage Cost</h6>
-                        <h6>$<span>0</span></h6>
+                        <h6>$<span id="extra-storage-price">0</span></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 border-bottom border-dark d-flex justify-content-between p-2">
                         <h6>Delivery Charge</h6>
-                        <h6>$<span>0</span></h6>
+                        <h6>$<span id="premium-delivery-price">0</span></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 border-bottom d-flex justify-content-between p-2">
                         <h6>Total Price</h6>
-                        <h6>$<span>1299</span></h6>
+                        <h6>$<span id="total-price">1299</span></h6>
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col-lg-5">
                         <h6>Add Promo Code</h6>
                         <div class="d-flex">
-                            <input class="border border-2 rounded" type="text">
-                            <button class="btn btn-danger">Apply</button>
+                            <input id="promo-code-input" class="border border-2 rounded" type="text">
+                            <button id="promo-code-button" class="btn btn-danger">Apply</button>
                         </div>
                     </div>
                 </div>
@@ -86,9 +87,9 @@
         </section>
     </main>
     <footer class="my-4">
-        <h1 class="text-center">Total: $<span>1299</span></h1>
+        <h1 class="text-center">Total: $<span id="grand-total">1299</span></h1>
     </footer>
-
+    <script src="js/app.js"></script>
 </body>
 
 </html>
