@@ -1,29 +1,33 @@
-function inputPrice(number, is1tb, isFreeDelivery) {
-    const basicMemory = document.getElementById('extra-memory-price');
-    const basicStorage = document.getElementById('extra-storage-price');
-    const basicDelivery = document.getElementById('premium-delivery-price');
-    if (number == 0 && is1tb == false && isFreeDelivery == false) {
-        basicMemory.innerText = 0;
+// Input function from category button to invoice
+
+function inputPrice(number, is1tbMemory, isFreeDelivery) {
+    const memoryCostArea = document.getElementById('extra-memory-price');
+    const storageCostArea = document.getElementById('extra-storage-price');
+    const deliveryCostArea = document.getElementById('premium-delivery-price');
+    if (number == 0 && is1tbMemory == false && isFreeDelivery == false) {
+        memoryCostArea.innerText = 0;
     }
-    if (number == 180 && is1tb == false && isFreeDelivery == false) {
-        basicMemory.innerText = 180;
+    if (number == 180 && is1tbMemory == false && isFreeDelivery == false) {
+        memoryCostArea.innerText = 180;
     }
-    if (number == 0 && is1tb == true && isFreeDelivery == false) {
-        basicStorage.innerText = 0;
+    if (number == 0 && is1tbMemory == true && isFreeDelivery == false) {
+        storageCostArea.innerText = 0;
     }
-    if (number == 100 && is1tb == true && isFreeDelivery == false) {
-        basicStorage.innerText = 100;
+    if (number == 100 && is1tbMemory == true && isFreeDelivery == false) {
+        storageCostArea.innerText = 100;
     }
-    if (number == 180 && is1tb == true && isFreeDelivery == false) {
-        basicStorage.innerText = 180;
+    if (number == 180 && is1tbMemory == true && isFreeDelivery == false) {
+        storageCostArea.innerText = 180;
     }
-    if (number == 0 && is1tb == false && isFreeDelivery == true) {
-        basicDelivery.innerText = 0;
+    if (number == 0 && is1tbMemory == false && isFreeDelivery == true) {
+        deliveryCostArea.innerText = 0;
     }
-    if (number == 20 && is1tb == false && isFreeDelivery == false) {
-        basicDelivery.innerText = 20;
+    if (number == 20 && is1tbMemory == false && isFreeDelivery == false) {
+        deliveryCostArea.innerText = 20;
     }
 }
+
+// Total Price Calculation function
 
 function totalPrice() {
     const bestPriceText = document.getElementById('normal-price');
@@ -44,6 +48,7 @@ function totalPrice() {
 
 }
 
+// All button click event
 document.getElementById('8gb-memory').addEventListener('click', function () {
     inputPrice(0, false, false);
     totalPrice();
@@ -79,16 +84,19 @@ document.getElementById('premium-delivery').addEventListener('click', function (
     totalPrice();
 })
 
+// Promo Code validation condition
 document.getElementById('promo-code-button').addEventListener('click', function () {
     const cuponText = document.getElementById('promo-code-input');
     const subTotal = document.getElementById('total-price');
     const totalPriceText = document.getElementById('grand-total');
-
     if (cuponText.value == 'stevekaku' && subTotal.innerText == totalPriceText.innerText) {
         const totalPrice = parseFloat(totalPriceText.innerText);
         const discount = (totalPrice * 20) / 100;
         const subTotal = totalPrice - discount;
         totalPriceText.innerText = subTotal;
+        cuponText.value = '';
+    }
+    else {
         cuponText.value = '';
     }
 })
